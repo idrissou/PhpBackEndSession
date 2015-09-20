@@ -14,7 +14,10 @@ Check the class session.php for reference
 */ 
 // creating a new session
 $session = new session();
+// starting a new session
 $sessionId = $session->startNewSession();
+//setting a paramater to the session
 $session->addParameter("user","Idriss");
+// deleting a session
 $session->delete($sessionId);
 ?>
