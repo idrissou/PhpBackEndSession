@@ -15,6 +15,7 @@ Check the class session.php for reference
 // creating a new session
 $session = new session();
 // starting a new session
+// On success, will return the session id
 $sessionId = $session->startNewSession();
 //setting a paramater to the session
 $session->addParameter("user","Idriss");
