@@ -9,18 +9,22 @@ Before getting started don't forget to create a DB called session with 3 paramet
 
 The following is a short example of how to start a session.
 
+Creating a new session
 
-creating a new session
 $session = new session();
 
-starting a new session
+Starting a new session:
+
 $sessionId = $session->startNewSession();
 
-setting a paramater to the session
+Setting a paramater to the session:
+
 $session->addParameter("user","Idriss");
 
-deleting a session
+Deleting a session:
+
 $session->delete($sessionId);
+
 Any questions or remarks, feel free to contact me at: idriss.benarafa@gmail.com. I answer swiftly.
 
 Idriss
