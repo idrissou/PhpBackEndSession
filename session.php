@@ -32,9 +32,7 @@ class session {
 			define('SESSIONS_FOLDER',ROOT.'session_folder'.DIRECTORY_SEPARATOR);
 		}
 		$this->dbconnection = new db();
-	}
-	
-
+	}	
 
 	/** function addParameter($sessionid, $parametername, $parametervalue)                                                                                                                                
 	*This function adds a parameter to the session..
@@ -106,7 +104,6 @@ class session {
   function getParameter($sessionid, $parametername){
   }
   
-   /********************************************
    *********************************************
    *********************************************
    *********************************************
@@ -114,7 +111,6 @@ class session {
    *********************************************
    *********************************************
    *********************************************
-   ********************************************/
    
    
 	
