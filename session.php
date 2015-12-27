@@ -13,7 +13,7 @@ Every session has a uniqid like: 4b3403665fea6
 */ 
 
 class session {
-public $dbconnection;
+	public $dbconnection;
 	/** function construct()
      * This is the class constructor. It starts a new session.
      * The construct will check the existence of a session directory ( where the session files are stored). 
@@ -33,44 +33,7 @@ public $dbconnection;
 		}
 		$this->dbconnection = new db();
 	}
-	/** function modifySessionParameter($sessionid, $parametername, $newvalue)                                                                                                                                
-	*This function modifies a specific parameter value.
-	*Input
-	*@param string $sessionid
-	*@param string $parametername
-	*@param string $newvalue
-	*@return int
-	*if the $parametername does not exist, the function returns -1
-	*if the parametername exist, the old value, and the modification took place, the function returns 1
-	*/
-	function modifySessionParameter($sessionid, $parametername, $newvalue) {
-	}
- 
-	/** function deleteSessionParameter($sessionid, $parametername)                                                                                                                                 
-	*This function deletes a specific parameter .// to change a variable, I just overwrite it
-	*Input
-	*@param string $sessionid
-	*@param string $parametername
-	*@return int
-	*if the $parametername does not exist, the function returns -1
-	*if the parametername exist, and was deleted succesfully, the function returns 1
-	*/
-
-	function deleteSessionParameter($sessionid, $parametername){
-	}
-
-
-	/** function deleteAllParameters($sessionid)                                                                                                                                
-	*This function deletes all session parameters.
-	*@param string $sessionid
-	*@return int
-	*if the $parametername does not exist, the function returns -1
-	*if all parameters were deleted succesfully, then the function returns 1
-	*/
-
-
-	function deleteAllParameters($sessionid){
-	}
+	
 
 
 	/** function addParameter($sessionid, $parametername, $parametervalue)                                                                                                                                
@@ -87,17 +50,6 @@ public $dbconnection;
 		$this->dbconnection->insert($sessionid, $parametername, $parametervalue);
 	}
 
-
-	/** function destroySession($sessionid )                                                                                                                                 
-	*This function destroys a session
-	*Input: 
-	*@param string $sessionid
-	*@return int
-	* if the session was destroyed, the function returns a 1 value
-	*/
-	function destroySession($sessionid ) {
-	}
-
 	/** function startSession()                                                                                                                                 
 	*This function stats a session in case it wasn't already started by creating a new identifier
 	*Input: none
@@ -107,7 +59,7 @@ public $dbconnection;
 	/* A uniqid, like: 4b3403665fea6 */
 	// microtime() returns the current Unix timestamp with microseconds.
 	function startNewSession(){
-	$sessionid = 0;
+		$sessionid = 0;
 		if (isset($_SERVER['REMOTE_ADDR']) &&  isset($_SERVER['HTTP_USER_AGENT']))
 			$sessionid = md5(uniqid(microtime()) . $_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']); 
 		else if (!isset($_SERVER['REMOTE_ADDR']) &&  isset($_SERVER['HTTP_USER_AGENT']))
@@ -121,17 +73,6 @@ public $dbconnection;
 		
 	}
 
-	/** function checksifStarted($sessionid )                                                                                                                                
-	*This function checks if  a session already started
-	*Input: 
-	*@param string $sessionid
-	*@return int:
-	*It returns 1 if the session already started
-	*It returns 0 in case the session did not start yet
-	*/
-
-	function checksifStarted($sessionid ){
-	}
 
 /** function checkParameter($sessionid, $parametername)                                                                                                                                 
   *This function checks if  a  session's parameter exists
@@ -148,7 +89,7 @@ public $dbconnection;
 //It returns 0 in case the parameter does not exist
 
 	function checkParameter($sessionid, $parametername){
-	$this->dbconnection->read($sessionid, $parametername);
+		$this->dbconnection->read($sessionid, $parametername);
 	
 	}
 
@@ -249,7 +190,7 @@ public $dbconnection;
 				else {
 					fwrite($fh, $linereplacement);
 				}
-				}
+			}
 			fclose($fh);
 			return 1;
 		}
